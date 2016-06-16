@@ -28,15 +28,30 @@ For device configuration options see the [device-config-schema](device-config-sc
 
 ### Device examples
 
-#### HKPollutionAQHICurrentDevice Device
+#### Pollution Forecast Device
+
+This gives you a general forecast of the readings for the whole day, including a human friendly "Risk" as well as the aggregated AQHI reading.
 
 ```json
 {
-  "id": "hkpollution-current",
-  "name": "Hong Kong Pollution Forecast",
-  "class": "HKPollutionAQHICurrentDevice",
-  "updateInterval": 5000,
-  "showRoadside": true,
-  "showGeneral": true
+  "id": "pollution-forecast",
+  "name": "HK Pollution Forecast",
+  "class": "PollutionForecastDevice",
+  "showRoadsideAQHI": true,
+  "showGeneralAQHI": true,
+  "showRoadsideRisk": true,
+  "showGeneralRisk": true
+}
+```
+
+#### Pollution Readings Device
+
+This allows you to show all pollution readings such as PM2.5,NO2 etc.
+
+```json
+{
+  "id": "pollution-readings",
+  "name": "HK Pollution Readings",
+  "class": "PollutionReadingsDevice",
 }
 ```
