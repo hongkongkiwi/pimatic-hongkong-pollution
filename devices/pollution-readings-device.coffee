@@ -3,57 +3,41 @@ module.exports = (env) ->
   Promise = env.require 'bluebird'
   HongKongPollution = require 'hongkong-pollution'
 
-  class HKPollutionAQHICurrentDevice extends env.devices.Device
+  class PollutionReadingsDevice extends env.devices.Device
     constructor: (@config) ->
       @id = @config.id
       @name = @config.name
       @updateInterval = @config.updateInterval
-      @language = @config.language
-
-      console.log(@updateInterval)
 
       @hkPollution = new HongKongPollution {lang: @language or "en"}
 
       @_roadsideAQHI = {}
       @_generalAQHI = {}
 
-      if @config.showRoadsideRisk is true
-        @attributes.roadsideRisk = {
-          description: "Roadside Pollution Risk"
-          type: "string"
-          acronym: 'Roadside Risk'
-        }
-      if @config.showGeneralRisk is true
-        @attributes.generalRisk = {
-          description: "General Pollution Risk"
-          type: "string"
-          acronym: 'Risk'
-        }
-      if @config.showRoadsideAQHI is true
-        @attributes.roadsideAQHIUpper = {
-          description: "Roadside Pollution AQHI Upper"
+      @attributes
+        PM10:
+          description: "PM 10 Readings"
           type: "number"
-          acronym: 'Roadside AQHI ▲'
-        }
-        @attributes.roadsideAQHILower = {
-          description: "Roadside Pollution AQHI Lower"
+          acronym: 'PM10'
+        PM2_5:
+          description: "PM 2.5 Readings"
           type: "number"
-          acronym: 'Roadside AQHI ▼'
-        }
-      if @config.showGeneralAQHI is true
-        @attributes.generalAQHIUpper = {
-          description: "General Pollution AQHI Upper"
+          acronym: 'PM2.5'
+        O3:
+          description: "O3 Readings"
           type: "number"
-          acronym: 'AQHI ▲'
-        }
-        @attributes.generalAQHILower = {
-          description: "General Pollution AQHI Lower"
+          acronym: 'O3'
+        SO2:
+          description: "SO2 Readings"
           type: "number"
-          acronym: 'AQHI ▼'
-        }
+          acronym: 'SO2'
+        AQHI:
+          description: "AQHI Reading"
+          type: "number"
+          acronym: 'AQHI'
 
       @requestPollutionForecast()
-      @intervalTimerId = setInterval(@requestPollutionForecast, @updateInterval)
+      @intervalTimerId = setInterval(@requestPollutionForecast, @updateInterval * 1000)
       super()
 
     destroy: () ->

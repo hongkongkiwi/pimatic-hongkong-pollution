@@ -2,17 +2,22 @@ module.exports = (env) ->
 
   assert = env.require 'cassert'
 
-  PollutionForecastCurrentDevice = (require './devices/pollution-current-device') env
-
   class HongKongPollutionPlugin extends env.plugins.Plugin
     init: (app, @framework, @config) =>
       env.logger.info("Plugin Init")
+
+      devices = {
+        "PollutionForecastDevice": (require './devices/pollution-forecast-device') env
+        "PollutionReadingsDevice": (require './devices/pollution-readings-device') env
+      }
+
       deviceConfigDef = require './device-config-schema'
 
-      @framework.deviceManager.registerDeviceClass("PollutionForecastCurrentDevice", {
-         configDef: deviceConfigDef.PollutionForecastCurrentDevice,
-         createCallback: (config) => new PollutionForecastCurrentDevice(config)
-        })
+      for k of devices
+        @framework.deviceManager.registerDeviceClass(k, {
+           configDef: deviceConfigDef[k],
+           createCallback: (config) => new devices[k](config)
+          })
 
   # Create a instance of my plugin
   plugin = new HongKongPollutionPlugin
