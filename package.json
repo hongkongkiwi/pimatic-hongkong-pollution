@@ -11,6 +11,8 @@
     "hongkongpollution.coffee",
     "hongkongpollution-config-schema.coffee",
     "device-config-schema.coffee.coffee"
+    "devices/pollution-forecast-device.coffee",
+    "devices/pollution-readings-device.coffee"
   ],
   "scripts": {
     "test": "mocha"
