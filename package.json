@@ -1,0 +1,31 @@
+{
+  "name": "pimatic-hongkongpollution",
+  "description": "pimatic plugin to get pollution information from the Hong Kong Enviromental Department.",
+  "author": "Andy Savage <andy@savage.hk> (http://www.github.com/hongkongkiwi)",
+  "license": "MIT",
+  "main": "hongkongpollution",
+  "configSchema": "hongkongpollution-config-schema.coffee",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "hongkongpollution.coffee",
+    "hongkongpollution-config-schema.coffee",
+    "device-config-schema.coffee.coffee"
+  ],
+  "version": "1.0.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hongkongkiwi/pimatic-hongkongweather.git"
+  },
+  "dependencies": {
+    "hongkong-pollution": "^1.0.3"
+  },
+  "peerDependencies": {
+    "pimatic": ">=0.8.0 <1.0.0"
+  },
+  "engines": {
+    "node": ">0.8.x",
+    "npm": ">1.1.x"
+  }
+}
