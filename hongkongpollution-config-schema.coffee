@@ -8,8 +8,4 @@ module.exports = {
       description: "Debug mode. Writes debug messages to the pimatic log, if set to true."
       type: "boolean"
       default: false
-    language:
-      description: "what language to show the results in"
-      type: "string"
-      default: "en"
 }
