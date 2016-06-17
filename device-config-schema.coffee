@@ -5,9 +5,13 @@ module.exports = {
     type: "object"
     properties:
       updateInterval:
-        description: "the delay between polls of pollution server"
+        description: "seconds delay between polls of pollution server"
         type: "integer"
         default: 3600
+      reportingStation:
+        description: "which reporting station to use for readings"
+        type: "string"
+        default: "Hong Kong"
       # showRoadside:
       #   description: "whether to show roadside pollution readings"
       #   type: "boolean"
