@@ -8,23 +8,25 @@
   "files": [
     "README.md",
     "LICENSE",
+    "docs/Monitoring_Stations.md",
+    "docs/Air_Quality_Readings.md",
     "hongkongpollution.coffee",
     "hongkongpollution-config-schema.coffee",
-    "device-config-schema.coffee.coffee"
+    "device-config-schema.coffee.coffee",
     "devices/pollution-forecast-device.coffee",
     "devices/pollution-readings-device.coffee"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Pimatic Modules Cannot be Tested!\" && exit 1"
   },
   "version": "1.0.0",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/hongkongkiwi/pimatic-hongkongweather.git"
+    "url": "https://github.com/hongkongkiwi/pimatic-hongkongpollution.git"
   },
   "dependencies": {
-    "hongkong-pollution": "^1.0.3"
+    "hongkong-pollution": "*",
   },
   "peerDependencies": {
     "pimatic": ">=0.8.0 <1.0.0"
