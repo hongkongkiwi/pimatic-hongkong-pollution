@@ -1,10 +1,8 @@
 # pimatic-hongkongpollution
 
-Hong Kong Pollution Readings and Forecasts for (Pimatic)[<https://pimatic.org>]. This plugin uses the node.js module [onoff](https://www.github.com/hongkongkiwi/node-hongkongpollution).
+Hong Kong Pollution Readings and Forecasts for [Pimatic](https://pimatic.org). This plugin uses the node.js module [hongkong-pollution](https://www.github.com/hongkongkiwi/node-hongkongpollution) to grab the information.
 
-Data is taken from the Hong Kong Enviromental Departments Website and JSON feeds. In Hong Kong, pollution is a consideration as it is for many large cities. The reason for developing this module is so that you can have reminders to wear a polution mask or stay indoors on particularly bad days.
-
-Personally I intend to pair it with an air filter to monitor outside pollution readings and automatically turn on/off my air filter.
+Data is taken from the [Hong Kong Environmental Departments Website](http://www.aqhi.gov.hk/en.html) and [RSS feed](http://www.aqhi.gov.hk/epd/ddata/html/out/aqhirss_Eng.xml). In Hong Kong, pollution is a big consideration as it is for many large cities. The reason for developing this module is so that you can have reminders to wear a pollution mask, stay indoors or combine it with other modules in Pimatic so you can automatically turn on the indoor Air Filter.
 
 ## Plugin Configuration
 
@@ -60,5 +58,19 @@ The most important setting is which reporting station to use. (Click here)[docs/
 
 ## Air Quality information
 
-- (List of Air Monitoring Stations in HK)[docs/Monitoring_Stations.md]
-- (Air Quality Reading Explanations)[docs/Air_Quality_Readings.md]
+- [List of Air Monitoring Stations in HK](docs/Monitoring_Stations.md)
+- [Air Quality Reading Explanations](docs/Air_Quality_Readings.md)
+
+## Contributing
+
+Feel free to submit any pull requests or add functionality, I'm usually pretty responsive.
+
+If you like the module, please consider donating some bitcoin or litecoin.
+
+**Bitcoin**
+
+![LNzdZksXcCF6qXbuiQpHPQ7LUeHuWa8dDW](http://i.imgur.com/9rsCfv5.png?1)
+
+**LiteCoin**
+
+![LNzdZksXcCF6qXbuiQpHPQ7LUeHuWa8dDW](http://i.imgur.com/yF1RoHp.png?1)
