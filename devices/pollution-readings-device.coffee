@@ -48,8 +48,8 @@ module.exports = (env) ->
           description: "AQHI Reading"
           type: "number"
           acronym: 'AQHI'
+          default: 0
 
-      # Pull the readings when we first launch the module
       if @reportingStation?
         @requestPollutionReading()
 
@@ -61,8 +61,9 @@ module.exports = (env) ->
       @aqhi = 0
       @o3 = 0
 
-      @intervalTimerId = setInterval(@requestPollutionReading, @updateInterval * 1000)
       super()
+      @intervalTimerId = setInterval(@requestPollutionReading, @updateInterval * 1000)
+      @requestPollutionReading()
 
     destroy: () ->
       clearInterval @intervalTimerId if @intervalTimerId?
