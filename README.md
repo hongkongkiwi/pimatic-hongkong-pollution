@@ -20,7 +20,7 @@ in the `plugins` Array.
 
 ## Device Configuration
 
-Devices can be added by adding them to the `devices` Array in the config file. Set the `class` property to `GpioSwitch`, `GpioPresence`, or `GpioContact`
+Devices can be added by adding them to the `devices` Array in the config file. Set the `class` property to `PollutionForecastDevice` or `PollutionReadingsDevice`
 
 For device configuration options see the [device-config-schema](device-config-schema.coffee) file.
 
@@ -44,9 +44,9 @@ This gives you a general forecast of the AQHI for the whole day, including a hum
 
 #### Pollution Readings Device
 
-This allows you to show all pollution readings for a specific area such as (PM2.5,PM10,NO2,SO2,O3,CO)[docs/Air_Quality_Readings.md].
+This allows you to show all pollution readings for a specific area such as [PM2.5,PM10,NO2,SO2,O3,CO](docs/Air_Quality_Readings.md).
 
-The most important setting is which reporting station to use. (Click here)[docs/Monitoring_Stations.md] for more information about which reporting station to use for your district.
+The most important setting is which reporting station to use. [Click here](docs/Monitoring_Stations.md) for more information about which reporting station to use for your district.
 
 ```json
 {
