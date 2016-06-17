@@ -19,7 +19,7 @@
   "scripts": {
     "test": "echo \"Pimatic Modules Cannot be Tested!\" && exit 1"
   },
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": false,
   "repository": {
     "type": "git",
