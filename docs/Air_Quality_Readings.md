@@ -1,6 +1,6 @@
 # Air Quality Readings
 
-I have compiled a list of different acronyms and their meanings. All credit goes to (Austrian Government - Department of the Environment)[<https://www.environment.gov.au/protection/publications>] for the text.
+I have compiled a list of different acronyms and their meanings. All credit goes to [Austrian Government - Department of the Environment](https://www.environment.gov.au/protection/publications) and [Hong Kong Environment Department](http://www.aqhi.gov.hk/en/what-is-aqhi/about-aqhi.html) for the text.
 
 - [Nitrogen Dioxide (NO2)](#nitrogen-dioxide-no2)
 - [Sulfur Dioxide (SO2)](#sulfur-dioxide-so2)
@@ -47,7 +47,7 @@ Those most at risk of developing problems if they are exposed to sulfur dioxide 
 
 ### What are photochemical oxidants and ozone?
 
-'Photochemical oxidants' is the technical term for the type of smog found in Australian cities during the warmer months of the year. This type of smog can be invisible or it can appear as a whitish haze.
+'Photochemical oxidants' is the technical term for the type of smog found in cities during the warmer months of the year. This type of smog can be invisible or it can appear as a whitish haze.
 
 Photochemical oxidants are formed when sunlight falls on a mixture of chemicals in the air. Ozone is one of the main photochemical oxidants. Other chemicals such as formaldehyde are also found and, like ozone, have adverse health effects. Environment agencies measure the level of ozone because it indicates the total amount of photochemical oxidants in the air. Cities that have abundant sunshine over periods of time, together with moderate winds and high temperatures, are most likely to experience high levels of photochemical oxidants.
 
@@ -126,3 +126,5 @@ Very High            | 10
 Serious              | >10
 
 When the health risk category is at the Low and Moderate levels, you can continue to enjoy your usual activities. When the category reaches High, children, the elderly and people with heart or respiratory illnesses should reduce outdoor physical exertion. When the category reaches Very High or Serious, the general public should also reduce or avoid outdoor physical exertion.
+
+The Hong Kong EPD provide a [handy FAQ about AQHI](http://www.aqhi.gov.hk/en/what-is-aqhi/faqs.html) if you want to know more.

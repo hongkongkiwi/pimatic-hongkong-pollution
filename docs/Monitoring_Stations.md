@@ -1,6 +1,6 @@
 # Hong Kong EPD Monitoring Stations
 
-The (Hong Kong EPD)[<http://www.aqhi.gov.hk>] gives a (guideline)[<http://www.aqhi.gov.hk/en/what-is-aqhi/faqs.html#e_11>] of which monitoring station to use depending on your district. They also provide (more detailed information)[<http://www.aqhi.gov.hk/en/monitoring-network/air-quality-monitoring-stations.html>] about where each monitoring station is.
+The [Hong Kong EPD](http://www.aqhi.gov.hk) gives a [guideline](http://www.aqhi.gov.hk/en/what-is-aqhi/faqs.html#e_11) of which monitoring station to use depending on your district. They also provide [more detailed information](http://www.aqhi.gov.hk/en/monitoring-network/air-quality-monitoring-stations.html) about where each monitoring station is.
 
 ## District to Station Map
 
@@ -30,7 +30,7 @@ Yuen Long         | Yuen Long
 
 ## Available Stations
 
-The reportingStation config value will accept the following:
+The [reportingStation config value](device-config-schema.coffee) will accept the following:
 
 - "Central/Western"
 - "Eastern"
@@ -45,4 +45,4 @@ The reportingStation config value will accept the following:
 - "Tsen Mum"
 - "Yuen Long"
 
-(Click here)[Air_Quality_Readings.md] for a list of what each returned reading means.
+[Click here](Air_Quality_Readings.md) for a list of what each returned reading means.
