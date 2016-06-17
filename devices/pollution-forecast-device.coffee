@@ -50,17 +50,24 @@ module.exports = (env) ->
           acronym: 'AQHI ▼'
         }
 
-      @requestPollutionForecast()
-      @intervalTimerId = setInterval(@requestPollutionForecast, @updateInterval * 1000)
       super()
+      @intervalTimerId = setInterval(@requestPollutionForecast, @updateInterval * 1000)
+      @requestPollutionForecast()
 
     destroy: () ->
       clearInterval @intervalTimerId if @intervalTimerId?
       super()
 
-    requestPollutionForecast: () =>
+    getRoadsideRisk: () -> Promise.resolve( String @_roadsideRisk )
+    getGeneralRisk: () -> Promise.resolve( String @_generalRisk )
+    getRoadsideAQHIUpper: () -> Promise.resolve( Number @_roadsideAQHI.Upper )
+    getRoadsideAQHILower: () -> Promise.resolve( Number @_roadsideAQHI.Lower )
+    getGeneralAQHIUpper: () -> Promise.resolve( Number @_generalAQHI.Upper )
+    getGeneralAQHILower: () -> Promise.resolve( Number @_generalAQHI.Lower )
+
+    requestPollutionForecast: () ->
       @hkPollution.getForecast()
-        .then( (forecast) =>
+        .then (forecast) ->
           @_roadsideRisk = forecast.CurrentAQHIReport[0].AQHIRisk
           @emit "roadsideRisk", String @_roadsideRisk
 
@@ -75,16 +82,7 @@ module.exports = (env) ->
           @emit "generalAQHIUpper", Number @_generalAQHI.Upper
           @emit "generalAQHILower", Number @_generalAQHI.Lower
 
-          return forecast.CurrentAQHIReport;
-
-        ).catch( (error) =>
+          return forecast.CurrentAQHIReport
+        .catch (error) ->
           env.logger.error(error.message)
           env.logger.debug(error)
-        );
-
-    getRoadsideRisk: -> Promise.resolve( String @_roadsideRisk )
-    getGeneralRisk: -> Promise.resolve( String @_generalRisk )
-    getRoadsideAQHIUpper: -> Promise.resolve( Number @_roadsideAQHI.Upper )
-    getRoadsideAQHILower: -> Promise.resolve( Number @_roadsideAQHI.Lower )
-    getGeneralAQHIUpper: -> Promise.resolve( Number @_generalAQHI.Upper )
-    getGeneralAQHILower: -> Promise.resolve( Number @_generalAQHI.Lower )

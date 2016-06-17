@@ -4,20 +4,34 @@ module.exports = (env) ->
 
   class HongKongPollutionPlugin extends env.plugins.Plugin
     init: (app, @framework, @config) =>
-      env.logger.info("Plugin Init")
+      env.logger.debug("Plugin Initialized")
 
-      devices = {
-        "PollutionForecastDevice": (require './devices/pollution-forecast-device') env
-        "PollutionReadingsDevice": (require './devices/pollution-readings-device') env
-      }
-
+      # devices = {
+      #   "PollutionForecastDevice": (require './devices/pollution-forecast-device')
+      #   "PollutionReadingsDevice": (require './devices/pollution-readings-device')
+      # }
+      #
       deviceConfigDef = require './device-config-schema'
+      PollutionForecastDevice = (require './devices/pollution-forecast-device') env
 
-      for k of devices
-        @framework.deviceManager.registerDeviceClass(k, {
-           configDef: deviceConfigDef[k],
-           createCallback: (config) => new devices[k](config)
-          })
+      console.log(PollutionForecastDevice);
+
+      #console.log(new PollutionForecastDevice(config))
+      #
+      # for k of devices
+      #   @framework.deviceManager.registerDeviceClass(k, {
+      #      configDef: deviceConfigDef[k],
+      #      createCallback: (config) =>
+      #        Device = devices[k](env)
+      #        return new Device(config)
+      #     })
+      @framework.deviceManager.registerDeviceClass("PollutionForecastDevice", {
+         configDef: deviceConfigDef.PollutionForecastDevice,
+         createCallback: (config) =>
+           device = new PollutionForecastDevice(config)
+           console.log(device)
+           return device
+        })
 
   # Create a instance of my plugin
   plugin = new HongKongPollutionPlugin
